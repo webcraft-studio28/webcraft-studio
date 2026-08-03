@@ -259,10 +259,17 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 700; line-height: 1.2; 
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
-.intro-strip .container { display: flex; gap: 60px; align-items: flex-start; flex-wrap: wrap; }
-.intro-strip h2 { font-size: 1.6rem; flex: 1 1 280px; }
-.intro-strip p { flex: 1 1 360px; color: var(--muted); }
+.intro-strip-inner { display: flex; gap: 50px; align-items: center; flex-wrap: wrap; }
+.intro-strip-text { flex: 2 1 420px; }
+.intro-strip-text h2 { font-size: 1.6rem; margin-bottom: 14px; }
+.intro-strip-text p { color: var(--muted); }
 .intro-strip a { color: var(--accent); font-weight: 600; }
+.intro-illustration { flex: 1 1 240px; max-width: 300px; margin: 0 auto; }
+.intro-illustration svg { width: 100%; height: auto; display: block; }
+
+/* ===== Decorative illustrations ===== */
+.section-icon { width: 56px; height: 56px; margin: 0 auto 18px; display: block; }
+.section-icon.small { width: 44px; height: 44px; }
 
 /* ===== Cards (services) ===== */
 .services-grid { grid-template-columns: repeat(3, 1fr); }
