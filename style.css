@@ -406,6 +406,20 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 700; line-height: 1.2; 
 .skills-list { display: flex; flex-wrap: wrap; gap: 12px; }
 .skills-list span { background: var(--bg-alt); border: 1px solid var(--border); padding: 8px 18px; border-radius: 999px; font-size: 0.9rem; }
 
+/* ===== Process (services page) ===== */
+.process-grid { grid-template-columns: repeat(5, 1fr); }
+.process-note {
+  margin-top: 56px;
+  padding: 24px 28px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  max-width: 720px;
+  margin-left: auto; margin-right: auto;
+}
+.process-note h4 { font-size: 0.95rem; margin-bottom: 8px; }
+.process-note p { color: var(--muted); font-size: 0.92rem; }
+
 /* ===== CTA banner ===== */
 .cta-banner {
   position: relative;
@@ -504,7 +518,7 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 700; line-height: 1.2; 
 
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
-  .services-grid, .work-grid, .pricing-grid, .testimonial-grid, .values-grid { grid-template-columns: repeat(2, 1fr); }
+  .services-grid, .work-grid, .pricing-grid, .testimonial-grid, .values-grid, .process-grid { grid-template-columns: repeat(2, 1fr); }
   .about-hero, .contact-grid { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
 }
@@ -527,7 +541,7 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 700; line-height: 1.2; 
   .nav-toggle { display: flex; }
   .nav-cta { width: 100%; text-align: center; }
 
-  .services-grid, .work-grid, .pricing-grid, .testimonial-grid, .values-grid { grid-template-columns: 1fr; }
+  .services-grid, .work-grid, .pricing-grid, .testimonial-grid, .values-grid, .process-grid { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; gap: 30px; }
   .service-detail { grid-template-columns: 1fr; }
 }
