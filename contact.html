@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Webcraft Studio</title>
+<meta name="description" content="Get in touch with Webcraft Studio for freelance web design, development, and SEO work. Usually replies within 24 hours.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%233f5d4f'/%3E%3Crect x='23' y='53' width='14' height='28' rx='5' fill='%23ffffff' opacity='0.85'/%3E%3Crect x='43' y='34' width='14' height='47' rx='5' fill='%23ffffff'/%3E%3Crect x='63' y='19' width='14' height='62' rx='5' fill='%23ffffff'/%3E%3Ccircle cx='70' cy='19' r='5.3' fill='%23c17a4b'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#3f5d4f">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact — Webcraft Studio">
+<meta property="og:description" content="Get in touch with Webcraft Studio for freelance web design, development, and SEO work. Usually replies within 24 hours.">
+<meta name="twitter:card" content="summary">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Webcraft Studio",
+  "description": "Freelance web design, development, and SEO services for small businesses and startups.",
+  "email": "webcraftstudio28@gmail.com",
+  "areaServed": "Worldwide",
+  "priceRange": "$299-$699+"
+}
+</script>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img src="logo.svg" alt="" class="logo-mark">
+      <span class="logo-text">
+        <strong>Webcraft Studio</strong>
+        <small>Web Design &amp; SEO Freelancer</small>
+      </span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html" class="nav-cta active">Get in Touch</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-header">
+    <div class="container">
+      <p class="eyebrow">Contact</p>
+      <h1>Let's build something great</h1>
+      <p>Tell me a bit about your project and I'll get back to you within 24 hours with next steps and a rough quote.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <h2>Get in touch</h2>
+        <p>Whether you know exactly what you need or you're just exploring options, I'm happy to talk it through.</p>
+
+        <div class="contact-item">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>
+          </span>
+          <div>
+            <h4>Email</h4>
+            <p>webcraftstudio28@gmail.com</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg>
+          </span>
+          <div>
+            <h4>Response Time</h4>
+            <p>Usually within 24 hours</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z"/></svg>
+          </span>
+          <div>
+            <h4>Availability</h4>
+            <p>Remote — working with clients worldwide</p>
+          </div>
+        </div>
+      </div>
+
+      <!--
+        This form currently opens the visitor's email app via a "mailto:" link — it needs
+        no backend or account, but only works if the visitor has a desktop mail client set up.
+        To upgrade to a real server-side submission later:
+        1. Sign up free at https://formspree.io and create a form to get an endpoint like
+           https://formspree.io/f/xxxxxxx
+        2. Replace the <form> tag below with:
+           <form class="contact-form" id="contactForm" action="https://formspree.io/f/xxxxxxx" method="POST">
+        3. Remove the enctype attribute (Formspree expects standard form encoding).
+        No other changes are needed — field names and the JS feedback below already work either way.
+      -->
+      <form class="contact-form" id="contactForm" action="mailto:webcraftstudio28@gmail.com" method="post" enctype="text/plain">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="Name" required placeholder="Your name">
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="Email" required placeholder="you@example.com">
+        </div>
+        <div class="form-row">
+          <label for="budget">Project Budget</label>
+          <select id="budget" name="Budget">
+            <option value="Under $300">Under $300</option>
+            <option value="$300 - $700">$300 - $700</option>
+            <option value="$700+">$700+</option>
+            <option value="Not sure yet">Not sure yet</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="message">Project Details</label>
+          <textarea id="message" name="Message" rows="5" required placeholder="Tell me about your business and what you need..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+        <p class="form-note" id="formNote"></p>
+        <p class="form-fallback">Didn't open your email app? Email <a href="mailto:webcraftstudio28@gmail.com">webcraftstudio28@gmail.com</a> directly.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head center">
+        <p class="section-tag">FAQ</p>
+        <h2 class="section-title">Common questions</h2>
+      </div>
+      <div class="faq">
+        <div class="faq-item">
+          <h3>How long does a typical project take?</h3>
+          <p>A simple one-page site usually takes 1-2 weeks; a multi-page business site takes 2-4 weeks, depending on content and revisions.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do you offer ongoing support after launch?</h3>
+          <p>Yes — maintenance and update packages are available so your site keeps running smoothly after it goes live.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can you improve an existing website instead of rebuilding it?</h3>
+          <p>Absolutely. I can audit your current site for design, speed, and SEO issues and fix what's needed without a full rebuild.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What do you need from me to get started?</h3>
+          <p>A short call to discuss your goals, plus any branding, content, or reference sites you already have — I can help fill in the rest.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <p class="footer-logo"><img src="logo.svg" alt="" class="logo-mark">Webcraft Studio</p>
+      <p class="footer-tag">Web design, development &amp; SEO for businesses that want to grow online.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Explore</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-contact">
+      <h4>Get in Touch</h4>
+      <a href="mailto:webcraftstudio28@gmail.com">webcraftstudio28@gmail.com</a>
+      <p>Remote — working with clients worldwide</p>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    <p>&copy; <span id="year"></span> Webcraft Studio. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
