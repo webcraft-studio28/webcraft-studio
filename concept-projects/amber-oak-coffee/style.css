@@ -117,12 +117,18 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.15; let
   color: rgba(243,237,226,0.6); font-size: 0.85rem;
 }
 
+/* ===== Design notes ===== */
+.notes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.notes-grid h3 { font-size: 1.05rem; margin-bottom: 10px; color: var(--accent); }
+.notes-grid p { color: var(--muted); font-size: 0.92rem; }
+
 /* ===== Footer ===== */
 .site-footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 0.85rem; }
 
 @media (max-width: 860px) {
   .hero-inner, .visit-grid { grid-template-columns: 1fr; }
   .menu-grid { grid-template-columns: repeat(2, 1fr); }
+  .notes-grid { grid-template-columns: 1fr; gap: 24px; }
 }
 @media (max-width: 560px) {
   .menu-grid { grid-template-columns: 1fr; }

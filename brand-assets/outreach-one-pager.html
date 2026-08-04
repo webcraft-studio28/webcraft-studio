@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Webcraft Studio — Capabilities One-Pager</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #faf8f5; --bg-alt: #f1efe8; --ink: #1c1c1a; --muted: #6b6b62;
+    --border: #e3e0d6; --accent: #3f5d4f; --accent-dark: #2c4238;
+    --accent-soft: #e9efe9; --accent2: #c17a4b; --accent2-soft: #f5e7dd;
+    --serif: 'Playfair Display', serif; --sans: 'Inter', sans-serif;
+  }
+  html, body { background: #d8d5cd; }
+  body { font-family: var(--sans); color: var(--ink); line-height: 1.5; padding: 24px; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 700; line-height: 1.15; }
+
+  .page {
+    max-width: 800px; margin: 0 auto;
+    background: var(--bg);
+    padding: 52px 56px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+  }
+
+  .header-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px; padding-bottom: 24px; border-bottom: 2px solid var(--ink); }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .logo-mark { width: 42px; height: 42px; border-radius: 10px; }
+  .brand strong { font-family: var(--serif); font-size: 1.3rem; display: block; }
+  .brand span { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+  .contact-block { text-align: right; font-size: 0.82rem; color: var(--muted); }
+  .contact-block strong { color: var(--ink); }
+
+  .pitch { margin-bottom: 32px; }
+  .pitch h1 { font-size: 1.7rem; margin-bottom: 10px; text-wrap: balance; }
+  .pitch p { color: var(--muted); font-size: 0.95rem; max-width: 560px; }
+
+  .section-label {
+    font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--accent); margin-bottom: 14px;
+  }
+
+  .cases { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
+  .case-card { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: #fff; }
+  .case-card img { width: 100%; height: 120px; object-fit: cover; object-position: top; display: block; }
+  .case-body { padding: 16px 18px; }
+  .case-tag { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent2); }
+  .case-body h3 { font-size: 1.02rem; margin: 4px 0 8px; }
+  .case-row { margin-bottom: 7px; font-size: 0.8rem; }
+  .case-row strong { color: var(--accent-dark); }
+  .case-row span { color: var(--muted); }
+
+  .bottom-row { display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; }
+  .services-list { list-style: none; }
+  .services-list li {
+    font-size: 0.85rem; padding: 7px 0; border-bottom: 1px dashed var(--border);
+    display: flex; justify-content: space-between; gap: 12px;
+  }
+  .services-list li span { color: var(--muted); }
+
+  .pricing-box { background: var(--accent-soft); border-radius: 8px; padding: 18px 20px; }
+  .pricing-box .price-line { display: flex; justify-content: space-between; font-size: 0.85rem; padding: 6px 0; }
+  .pricing-box .price-line strong { font-family: var(--serif); color: var(--accent-dark); }
+  .pricing-note { font-size: 0.72rem; color: var(--muted); margin-top: 10px; font-style: italic; }
+
+  .footer-note { margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--border); font-size: 0.72rem; color: var(--muted); text-align: center; }
+
+  @media print {
+    html, body { background: #fff; padding: 0; }
+    .page { box-shadow: none; padding: 32px 40px; max-width: none; }
+    @page { size: A4; margin: 14mm; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="header-row">
+    <div class="brand">
+      <svg class="logo-mark" viewBox="0 0 64 64"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3f5d4f"/><stop offset="1" stop-color="#c17a4b"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#g)"/><rect x="15" y="34" width="9" height="18" rx="3" fill="#fff" opacity="0.85"/><rect x="27.5" y="22" width="9" height="30" rx="3" fill="#fff"/><rect x="40" y="12" width="9" height="40" rx="3" fill="#fff"/><circle cx="44.5" cy="12" r="3.4" fill="#c17a4b"/></svg>
+      <div>
+        <strong>Webcraft Studio</strong>
+        <span>Web Design &amp; SEO Freelancer</span>
+      </div>
+    </div>
+    <div class="contact-block">
+      <strong>webcraftstudio28@gmail.com</strong><br>
+      Remote — worldwide · Usually replies within 24 hours
+    </div>
+  </div>
+
+  <div class="pitch">
+    <h1>Thoughtful websites for businesses that want to grow.</h1>
+    <p>I design and build clean, fast websites — then optimize them for search — so small businesses and startups get a site that looks professional and actually brings in clients. One person, start to finish: no account managers, no handoffs.</p>
+  </div>
+
+  <h2 class="section-label">Recent Work</h2>
+  <div class="cases">
+    <div class="case-card">
+      <img src="../portfolio-images/amber-oak.jpg" alt="Amber & Oak Coffee Roastery concept site">
+      <div class="case-body">
+        <p class="case-tag">Concept Project — Business Website</p>
+        <h3>Amber &amp; Oak Coffee Roastery</h3>
+        <p class="case-row"><strong>Problem:</strong> <span>Small-batch roasteries rarely have more than a social page — hard for customers to find hours or what sets them apart.</span></p>
+        <p class="case-row"><strong>Approach:</strong> <span>Warm, editorial single page — custom illustration, no template bloat.</span></p>
+        <p class="case-row"><strong>Result:</strong> <span>Fast, hand-coded page with a distinct visual identity.</span></p>
+      </div>
+    </div>
+    <div class="case-card">
+      <img src="../portfolio-images/pulse.jpg" alt="Pulse fitness app concept landing page">
+      <div class="case-body">
+        <p class="case-tag">Concept Project — Landing Page</p>
+        <h3>Pulse — Fitness App</h3>
+        <p class="case-row"><strong>Problem:</strong> <span>Fitness apps compete on trust — stock photos and vague promises don't convince data-driven users.</span></p>
+        <p class="case-row"><strong>Approach:</strong> <span>Dark, bold design with a live-metrics phone mockup and plain-language copy.</span></p>
+        <p class="case-row"><strong>Result:</strong> <span>A single-scroll page built around one goal: the download.</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-row">
+    <div>
+      <p class="section-label">Services</p>
+      <ul class="services-list">
+        <li>Web Design <span>Custom, on-brand, conversion-focused</span></li>
+        <li>Web Development <span>Clean code, responsive, fast</span></li>
+        <li>SEO Optimization <span>On-page &amp; technical</span></li>
+        <li>E-commerce <span>Product pages, checkout flow</span></li>
+        <li>Speed &amp; Performance <span>Core Web Vitals tuning</span></li>
+        <li>Care &amp; Maintenance <span>Ongoing updates &amp; support</span></li>
+      </ul>
+    </div>
+    <div>
+      <p class="section-label">Starting Prices (USD)</p>
+      <div class="pricing-box">
+        <div class="price-line"><span>Starter — 1 page</span><strong>$299</strong></div>
+        <div class="price-line"><span>Business — up to 5 pages</span><strong>$699</strong></div>
+        <div class="price-line"><span>Growth — e-commerce &amp; ongoing</span><strong>Custom</strong></div>
+        <p class="pricing-note">Starting points — every project is scoped and priced in writing before work begins.</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="footer-note">Full portfolio, process details, and contact form at the Webcraft Studio website — get in touch any time at webcraftstudio28@gmail.com.</p>
+
+</div>
+
+</body>
+</html>

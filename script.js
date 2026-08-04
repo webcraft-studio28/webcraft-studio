@@ -86,11 +86,118 @@ if (!prefersReducedMotion) {
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// ===== Contact form feedback =====
+// ===== Contact form submission (Formspree) =====
 const contactForm = document.getElementById('contactForm');
 const formNote = document.getElementById('formNote');
 if (contactForm && formNote) {
-  contactForm.addEventListener('submit', () => {
-    formNote.textContent = 'Opening your email app to send this message — if nothing happens, use the direct email link below.';
+  const submitBtn = contactForm.querySelector('button[type="submit"]');
+
+  contactForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    formNote.classList.remove('error');
+    formNote.textContent = 'Sending...';
+    if (submitBtn) submitBtn.disabled = true;
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        formNote.textContent = "Thanks — your message is on its way. I'll get back to you within 24 hours.";
+        contactForm.reset();
+      } else {
+        const data = await response.json().catch(() => null);
+        const detail = data && Array.isArray(data.errors) && data.errors.length
+          ? data.errors.map(e => e.message).join(', ')
+          : null;
+        formNote.textContent = detail || "Something went wrong — please try again or use the email link below.";
+        formNote.classList.add('error');
+      }
+    } catch (err) {
+      formNote.textContent = "Couldn't send — please check your connection or use the email link below.";
+      formNote.classList.add('error');
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+    }
   });
 }
+
+// ===== Currency converter for pricing (display only — quotes/invoices stay in USD) =====
+(function () {
+  const priceEls = document.querySelectorAll('.price-num[data-usd]');
+  const select = document.getElementById('currencySelect');
+  if (!priceEls.length) return;
+
+  const SYMBOLS = { USD: '$', GBP: '£', INR: '₹' };
+  const RATE_CACHE_KEY = 'wcCurrencyRates';
+  const RATE_CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours
+  const CURRENCY_KEY = 'wcCurrency';
+
+  function guessDefaultCurrency() {
+    const lang = (navigator.language || '').toLowerCase();
+    if (lang.endsWith('-gb')) return 'GBP';
+    if (lang.endsWith('-in') || lang.startsWith('hi')) return 'INR';
+    return 'USD';
+  }
+
+  function getCachedRates() {
+    try {
+      const raw = localStorage.getItem(RATE_CACHE_KEY);
+      if (!raw) return null;
+      const parsed = JSON.parse(raw);
+      if (!parsed.time || Date.now() - parsed.time > RATE_CACHE_TTL) return null;
+      return parsed.rates || null;
+    } catch (err) {
+      return null;
+    }
+  }
+
+  function setCachedRates(rates) {
+    try {
+      localStorage.setItem(RATE_CACHE_KEY, JSON.stringify({ time: Date.now(), rates }));
+    } catch (err) {
+      // localStorage unavailable (private browsing, etc.) — safe to ignore
+    }
+  }
+
+  function applyCurrency(currency, rates) {
+    const rate = currency === 'USD' ? 1 : rates && rates[currency];
+    if (!rate) return; // no rate yet — leave the current (USD fallback) values in place
+    priceEls.forEach((el) => {
+      const usd = parseFloat(el.getAttribute('data-usd'));
+      const converted = Math.round(usd * rate);
+      el.setAttribute('data-count-to', String(converted));
+      el.setAttribute('data-count-prefix', SYMBOLS[currency]);
+      el.textContent = SYMBOLS[currency] + converted;
+    });
+  }
+
+  let currentCurrency = localStorage.getItem(CURRENCY_KEY) || guessDefaultCurrency();
+  if (select) select.value = currentCurrency;
+
+  const cachedRates = getCachedRates();
+  if (cachedRates) applyCurrency(currentCurrency, cachedRates);
+
+  fetch('https://api.frankfurter.dev/v1/latest?from=USD&to=GBP,INR')
+    .then((res) => (res.ok ? res.json() : Promise.reject(res)))
+    .then((data) => {
+      if (data && data.rates) {
+        setCachedRates(data.rates);
+        applyCurrency(currentCurrency, data.rates);
+      }
+    })
+    .catch(() => {
+      // Rate fetch failed — quietly keep displaying USD, no visible error to the visitor
+    });
+
+  if (select) {
+    select.addEventListener('change', () => {
+      currentCurrency = select.value;
+      try { localStorage.setItem(CURRENCY_KEY, currentCurrency); } catch (err) {}
+      applyCurrency(currentCurrency, getCachedRates());
+    });
+  }
+})();
