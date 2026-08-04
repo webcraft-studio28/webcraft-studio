@@ -125,22 +125,22 @@ if (contactForm && formNote) {
   });
 }
 
-// ===== Currency converter for pricing (display only — quotes/invoices stay in USD) =====
+// ===== Currency converter for pricing (display only — quotes/invoices stay in INR) =====
 (function () {
-  const priceEls = document.querySelectorAll('.price-num[data-usd]');
+  const priceEls = document.querySelectorAll('.price-num[data-inr]');
   const select = document.getElementById('currencySelect');
   if (!priceEls.length) return;
 
   const SYMBOLS = { USD: '$', GBP: '£', INR: '₹' };
-  const RATE_CACHE_KEY = 'wcCurrencyRates';
+  const RATE_CACHE_KEY = 'wcCurrencyRatesV2'; // bumped: base currency changed from USD to INR, old cache shape is incompatible
   const RATE_CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours
   const CURRENCY_KEY = 'wcCurrency';
 
   function guessDefaultCurrency() {
     const lang = (navigator.language || '').toLowerCase();
     if (lang.endsWith('-gb')) return 'GBP';
-    if (lang.endsWith('-in') || lang.startsWith('hi')) return 'INR';
-    return 'USD';
+    if (lang.endsWith('-us')) return 'USD';
+    return 'INR';
   }
 
   function getCachedRates() {
@@ -164,11 +164,11 @@ if (contactForm && formNote) {
   }
 
   function applyCurrency(currency, rates) {
-    const rate = currency === 'USD' ? 1 : rates && rates[currency];
-    if (!rate) return; // no rate yet — leave the current (USD fallback) values in place
+    const rate = currency === 'INR' ? 1 : rates && rates[currency];
+    if (!rate) return; // no rate yet — leave the current (INR fallback) values in place
     priceEls.forEach((el) => {
-      const usd = parseFloat(el.getAttribute('data-usd'));
-      const converted = Math.round(usd * rate);
+      const inr = parseFloat(el.getAttribute('data-inr'));
+      const converted = Math.round(inr * rate);
       el.setAttribute('data-count-to', String(converted));
       el.setAttribute('data-count-prefix', SYMBOLS[currency]);
       el.textContent = SYMBOLS[currency] + converted;
@@ -181,7 +181,7 @@ if (contactForm && formNote) {
   const cachedRates = getCachedRates();
   if (cachedRates) applyCurrency(currentCurrency, cachedRates);
 
-  fetch('https://api.frankfurter.dev/v1/latest?from=USD&to=GBP,INR')
+  fetch('https://api.frankfurter.dev/v1/latest?from=INR&to=USD,GBP')
     .then((res) => (res.ok ? res.json() : Promise.reject(res)))
     .then((data) => {
       if (data && data.rates) {

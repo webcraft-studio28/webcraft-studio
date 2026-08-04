@@ -88,36 +88,39 @@ def test_currency_converter(page):
     select = page.locator("#currencySelect")
     check("currency selector is present", select.count() == 1)
 
-    price_el = page.locator('.price-num[data-usd="299"]').first
+    # INR is the real/base currency now (₹3000 Starter tier) — USD/GBP are
+    # approximate conversions fetched live, not the other way around
+    price_el = page.locator('.price-num[data-inr="3000"]').first
 
-    select.select_option("INR")
+    select.select_option("USD")
     # poll instead of a fixed sleep — the exchange-rate fetch has variable
     # network latency, so wait for the actual DOM change rather than guessing
     try:
         page.wait_for_function(
-            "document.querySelector('.price-num[data-usd=\"299\"]').textContent.includes('₹')",
+            "document.querySelector('.price-num[data-inr=\"3000\"]').textContent.includes('$')",
             timeout=5000,
         )
     except Exception:
         pass  # fall through, the check below will report the real state
-    inr_text = price_el.inner_text()
-    check("switching to INR updates the displayed price symbol", "₹" in inr_text, inr_text)
+    usd_text = price_el.inner_text()
+    check("switching to USD updates the displayed price symbol", "$" in usd_text, usd_text)
 
-    digits = "".join(c for c in inr_text if c.isdigit())
-    inr_value = int(digits) if digits else 0
-    # sanity check: USD/INR has been roughly 80-100 for a long time; catches a
-    # completely broken conversion (e.g. showing $299 or 0) without being
-    # brittle to the exact daily rate
+    digits = "".join(c for c in usd_text if c.isdigit())
+    usd_value = int(digits) if digits else 0
+    # sanity check: USD/INR has been roughly 75-100 for a long time, so ₹3000
+    # should convert to roughly $30-$40 — catches a completely broken
+    # conversion (e.g. showing ₹3000 or 0) without being brittle to the
+    # exact daily rate
     check(
-        "INR value is in a sane range for a live conversion of $299",
-        80 * 299 < inr_value < 110 * 299,
-        inr_text,
+        "USD value is in a sane range for a live conversion of ₹3000",
+        25 < usd_value < 45,
+        usd_text,
     )
 
-    select.select_option("USD")
+    select.select_option("INR")
     page.wait_for_timeout(400)
-    usd_text = price_el.inner_text()
-    check("switching back to USD restores the $299 display", usd_text.strip() == "$299", usd_text)
+    inr_text = price_el.inner_text()
+    check("switching back to INR restores the ₹3000 display", inr_text.strip() == "₹3000", inr_text)
 
 
 def test_scroll_reveal_and_count_up(page):
