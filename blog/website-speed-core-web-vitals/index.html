@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Fast Should Your Website Load? — Webcraft Studio</title>
+<meta name="description" content="A plain-English guide to Core Web Vitals — what Google actually measures, what counts as fast enough, and three quick ways to check your own site.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%233f5d4f'/%3E%3Crect x='23' y='53' width='14' height='28' rx='5' fill='%23ffffff' opacity='0.85'/%3E%3Crect x='43' y='34' width='14' height='47' rx='5' fill='%23ffffff'/%3E%3Crect x='63' y='19' width='14' height='62' rx='5' fill='%23ffffff'/%3E%3Ccircle cx='70' cy='19' r='5.3' fill='%23c17a4b'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#3f5d4f">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How Fast Should Your Website Load?">
+<meta property="og:description" content="A plain-English guide to Core Web Vitals — what Google actually measures, what counts as fast enough, and three quick ways to check your own site.">
+<meta property="og:image" content="../../og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="../../og-image.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+<noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="../../index.html" class="logo">
+      <img src="../../logo.svg" alt="" class="logo-mark">
+      <span class="logo-text">
+        <strong>Webcraft Studio</strong>
+        <small>Web Design &amp; SEO Freelancer</small>
+      </span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="../../index.html">Home</a>
+      <a href="../../about.html">About</a>
+      <a href="../../services.html">Services</a>
+      <a href="../../portfolio.html">Portfolio</a>
+      <a href="../../blog.html" class="active">Blog</a>
+      <a href="../../contact.html" class="nav-cta">Get in Touch</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <article class="article">
+    <a href="../../blog.html" class="article-back">← Back to Blog</a>
+    <p class="blog-date">Performance · 5 min read</p>
+    <h1>How Fast Should Your Website Load?</h1>
+
+    <p>"Make it faster" is easy advice to give and hard to act on without knowing what's actually being measured. Google grades sites on three specific metrics, collectively called Core Web Vitals. Here's what each one means in plain English.</p>
+
+    <h2>Largest Contentful Paint (LCP) — how long until the main content shows up</h2>
+    <p>This measures the time it takes for the biggest visible element on the page — usually a hero image or heading — to fully load. Google considers 2.5 seconds or faster to be good. Past 4 seconds is considered poor. The most common fix is compressing images and making sure the server responds quickly.</p>
+
+    <h2>Interaction to Next Paint (INP) — how responsive the page feels</h2>
+    <p>This measures the delay between a visitor clicking, tapping, or typing something and the page actually responding. Under 200 milliseconds is good. Heavy, unoptimized JavaScript is the usual culprit here — the browser is too busy running scripts to respond to input right away.</p>
+
+    <h2>Cumulative Layout Shift (CLS) — how much the page jumps around while loading</h2>
+    <p>You've felt this one even if you didn't know its name: you go to tap a button, and at the last second an ad or image loads above it and shifts everything down, so you tap the wrong thing. A CLS score under 0.1 is good. The fix is usually reserving space for images and ads before they load, instead of letting the page reflow around them.</p>
+
+    <h2>Three ways to check your own site right now</h2>
+    <ol>
+      <li><strong>PageSpeed Insights</strong> (pagespeed.web.dev) — paste in your URL and get real Core Web Vitals scores, plus a prioritized list of what to fix.</li>
+      <li><strong>Chrome DevTools</strong> — right-click any page, choose "Inspect," open the Lighthouse tab, and run an audit directly in your browser.</li>
+      <li><strong>Search Console</strong> — if you have it set up, the Core Web Vitals report shows real data from actual visitors, not just a simulated test.</li>
+    </ol>
+
+    <blockquote>A site that scores well on all three isn't just ranking better — it's keeping more of the visitors who show up.</blockquote>
+
+    <h2>The honest bottom line</h2>
+    <p>Perfect scores aren't the goal — "good" across all three, consistently, is what actually matters for both ranking and for visitors sticking around. If your scores are in the red, that's usually a sign of a few specific, fixable issues rather than a site-wide rebuild.</p>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <p class="footer-logo"><img src="../../logo.svg" alt="" class="logo-mark">Webcraft Studio</p>
+      <p class="footer-tag">Web design, development &amp; SEO for businesses that want to grow online.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Explore</h4>
+      <a href="../../index.html">Home</a>
+      <a href="../../about.html">About</a>
+      <a href="../../services.html">Services</a>
+      <a href="../../portfolio.html">Portfolio</a>
+      <a href="../../blog.html">Blog</a>
+      <a href="../../contact.html">Contact</a>
+    </div>
+    <div class="footer-contact">
+      <h4>Get in Touch</h4>
+      <a href="mailto:webcraftstudio28@gmail.com">webcraftstudio28@gmail.com</a>
+      <p>Remote — working with clients worldwide</p>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    <p>&copy; <span id="year"></span> Webcraft Studio. All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="mobile-cta-bar">
+  <a href="../../contact.html" class="btn btn-primary btn-block">Get in Touch</a>
+</div>
+
+<script src="../../script.js"></script>
+</body>
+</html>

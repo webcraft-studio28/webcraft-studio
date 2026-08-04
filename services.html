@@ -10,7 +10,11 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Services — Webcraft Studio">
 <meta property="og:description" content="Web design, web development, SEO optimization, e-commerce, speed tuning and maintenance services for growing businesses.">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="og-image.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,6 +51,7 @@
       <a href="about.html">About</a>
       <a href="services.html" class="active">Services</a>
       <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html">Blog</a>
       <a href="contact.html" class="nav-cta">Get in Touch</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -161,7 +166,7 @@
       <div class="grid pricing-grid">
         <div class="price-card reveal">
           <h3>Starter</h3>
-          <p class="price">$299<span>/ one page</span></p>
+          <p class="price"><span class="price-num" data-count-to="299" data-count-prefix="$">$299</span><span class="price-period">/ one page</span></p>
           <ul>
             <li>1-page website</li>
             <li>Mobile responsive</li>
@@ -174,7 +179,7 @@
         <div class="price-card price-featured reveal">
           <p class="badge">Most Popular</p>
           <h3>Business</h3>
-          <p class="price">$699<span>/ up to 5 pages</span></p>
+          <p class="price"><span class="price-num" data-count-to="699" data-count-prefix="$">$699</span><span class="price-period">/ up to 5 pages</span></p>
           <ul>
             <li>Up to 5 pages</li>
             <li>Custom design</li>
@@ -187,7 +192,7 @@
 
         <div class="price-card reveal">
           <h3>Growth</h3>
-          <p class="price">Custom<span>/ ongoing</span></p>
+          <p class="price">Custom<span class="price-period">/ ongoing</span></p>
           <ul>
             <li>E-commerce / large sites</li>
             <li>Ongoing SEO strategy</li>
@@ -273,6 +278,7 @@
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
     </div>
     <div class="footer-contact">
@@ -285,6 +291,10 @@
     <p>&copy; <span id="year"></span> Webcraft Studio. All rights reserved.</p>
   </div>
 </footer>
+
+<div class="mobile-cta-bar">
+  <a href="contact.html" class="btn btn-primary btn-block">Get in Touch</a>
+</div>
 
 <script src="script.js"></script>
 </body>
