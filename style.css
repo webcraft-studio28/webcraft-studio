@@ -223,7 +223,10 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 700; line-height: 1.2; 
 .hero h1 { font-size: clamp(2.4rem, 6vw, 4rem); margin-bottom: 24px; }
 .hero h1 em { font-style: italic; color: var(--accent); }
 .hero-sub { color: var(--muted); font-size: 1.1rem; max-width: 560px; margin-bottom: 36px; }
-.hero-cta { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 60px; }
+.hero-cta { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+.hero-lowcommit { color: var(--muted); font-size: 0.88rem; margin-bottom: 44px; }
+.hero-lowcommit a { color: var(--accent-dark); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+.hero-lowcommit a:hover { color: var(--accent); }
 
 .hero-meta {
   display: flex;
@@ -520,6 +523,8 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 700; line-height: 1.2; 
 }
 .process-note h4 { font-size: 0.95rem; margin-bottom: 8px; }
 .process-note p { color: var(--muted); font-size: 0.92rem; }
+.contact-info .process-note { margin: 20px 0 28px; max-width: none; }
+#audit { scroll-margin-top: 100px; }
 
 /* ===== CTA banner ===== */
 .cta-banner {

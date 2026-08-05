@@ -137,10 +137,14 @@ if (contactForm && formNote) {
   const CURRENCY_KEY = 'wcCurrency';
 
   function guessDefaultCurrency() {
+    // USD is the standard default for most visitors (the site's real price is
+    // in INR, but a converted-from-INR USD/GBP number is what most visitors
+    // expect to see first). India/Hindi locales still default to INR since
+    // that's the actual audience the INR pricing is meant for.
     const lang = (navigator.language || '').toLowerCase();
     if (lang.endsWith('-gb')) return 'GBP';
-    if (lang.endsWith('-us')) return 'USD';
-    return 'INR';
+    if (lang.endsWith('-in') || lang.startsWith('hi')) return 'INR';
+    return 'USD';
   }
 
   function getCachedRates() {
