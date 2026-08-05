@@ -181,16 +181,25 @@ if (contactForm && formNote) {
   const cachedRates = getCachedRates();
   if (cachedRates) applyCurrency(currentCurrency, cachedRates);
 
-  fetch('https://api.frankfurter.dev/v1/latest?from=INR&to=USD,GBP')
+  // Frankfurter's API reliably accepts USD as a base but errors on INR as a
+  // base (a quirk of the underlying ECB reference data, not something we can
+  // fix on our end) — so fetch relative to USD and derive INR-relative rates
+  // ourselves via cross-multiplication instead of asking for from=INR directly.
+  fetch('https://api.frankfurter.dev/v1/latest?from=USD&to=INR,GBP')
     .then((res) => (res.ok ? res.json() : Promise.reject(res)))
     .then((data) => {
-      if (data && data.rates) {
-        setCachedRates(data.rates);
-        applyCurrency(currentCurrency, data.rates);
+      if (data && data.rates && data.rates.INR) {
+        const usdToInr = data.rates.INR;
+        const rates = {
+          USD: 1 / usdToInr,
+          GBP: data.rates.GBP / usdToInr,
+        };
+        setCachedRates(rates);
+        applyCurrency(currentCurrency, rates);
       }
     })
     .catch(() => {
-      // Rate fetch failed — quietly keep displaying USD, no visible error to the visitor
+      // Rate fetch failed — quietly keep displaying INR, no visible error to the visitor
     });
 
   if (select) {
