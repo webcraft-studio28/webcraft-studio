@@ -36,6 +36,11 @@ That's it — no `playwright install` step needed, since the script uses `channe
 python -m http.server 8765
 ```
 
+```bash
+python tests/mobile_device_check.py [base_url]
+```
+Real-device-emulation mobile check — uses Playwright's built-in device profiles (currently iPhone 14 and Pixel 7), which set real device pixel ratio, user agent, and touch capability, not just a resized viewport. Checks every real page for horizontal overflow, HTTP errors, and console/JS errors, and saves a full-page screenshot of each to `tests/mobile-screenshots/<device>/` for manual visual review — **always look at the screenshots yourself, not just the pass/fail line**, since the automated checks (overflow width, console errors) can't catch everything a human eye would (e.g. the fixed mobile CTA bar genuinely overlapping content mid-scroll was only caught by looking at a screenshot and then confirming with real per-element bounding-box math, not by the overflow check). Defaults to the live production site; pass `http://localhost:8765` to test local changes before pushing.
+
 ## Manual QA checklist
 
 See `manual-qa-checklist.md` in this folder — things that need a real look (visual layout, animations, actually submitting the contact form) rather than an automated script.

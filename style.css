@@ -662,7 +662,9 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 700; line-height: 1.2; 
     background: var(--bg); border-top: 1px solid var(--border);
     padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
     box-shadow: 0 -8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.25s ease;
   }
+  .mobile-cta-bar.cta-hidden { transform: translateY(100%); }
   body:has(.mobile-cta-bar) { padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px)); }
 }
 

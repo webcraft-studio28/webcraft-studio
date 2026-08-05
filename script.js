@@ -25,6 +25,25 @@ if (header) {
   }, { passive: true });
 }
 
+// ===== Mobile CTA bar: stays out of the way until the visitor has actually
+// scrolled into the content, then hides while scrolling down and reappears
+// on scroll-up. Without the initial delay, the bar can sit right on top of
+// whatever happens to be at the bottom of the viewport on page load (e.g. a
+// heading right after a short intro paragraph) before any scrolling occurs =====
+const mobileCtaBar = document.querySelector('.mobile-cta-bar');
+if (mobileCtaBar) {
+  const SHOW_AFTER_Y = 400;
+  let lastScrollY = window.scrollY;
+  mobileCtaBar.classList.add('cta-hidden');
+  window.addEventListener('scroll', () => {
+    const currentY = window.scrollY;
+    const scrollingDown = currentY > lastScrollY;
+    const shouldHide = currentY < SHOW_AFTER_Y || scrollingDown;
+    mobileCtaBar.classList.toggle('cta-hidden', shouldHide);
+    lastScrollY = currentY;
+  }, { passive: true });
+}
+
 // ===== Scroll reveal animations (staggered per parent) =====
 const revealGroups = new Map();
 document.querySelectorAll('.reveal').forEach(el => {
