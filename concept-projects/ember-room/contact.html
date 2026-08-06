@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reservations | Ember Room</title>
+<meta name="description" content="Concept website design for a modern wood-fired restaurant, built by Webcraft Studio as a portfolio sample project.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
+</head>
+<body>
+
+<div class="concept-banner">
+  Concept project by Webcraft Studio: a fictional business built to demonstrate design range. <a href="../../portfolio.html">← Back to portfolio</a>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c1.5 3 4 5 4 9a4 4 0 0 1-8 0c0-1 .3-1.8.8-2.6.4.8 1.2 1.4 2 1.4a1.6 1.6 0 0 0 1.6-1.6c0-1-.7-1.6-.7-3C11.7 4.6 11 3.2 12 2Z"/></svg>
+      </span>
+      <span class="logo-text">Ember Room</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Reservations</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-header">
+    <div class="container">
+      <p class="eyebrow">Reservations</p>
+      <h1>Book a Table</h1>
+      <p>One seating a night. Tables go quickly on weekends, so book a few days ahead if you can.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="visually-hidden">Contact Details and Reservation Form</h2>
+      <div class="contact-grid">
+        <div class="reveal">
+          <div class="contact-detail">
+            <span class="icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg>
+            </span>
+            <div>
+              <strong>Hours</strong>
+              <span>Tuesday-Saturday, 5pm-11pm. Closed Sunday &amp; Monday.</span>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <span class="icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <div>
+              <strong>Location</strong>
+              <span>Sample address: 210 Kiln Street</span>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <span class="icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            </span>
+            <div>
+              <strong>Phone</strong>
+              <span>Sample number: (555) 019-2846</span>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <span class="icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </span>
+            <div>
+              <strong>Large Parties</strong>
+              <span>Groups of 8 or more, call ahead rather than booking online.</span>
+            </div>
+          </div>
+          <div class="map-block" aria-hidden="true">Map placeholder</div>
+        </div>
+
+        <form class="res-form reveal" id="resForm">
+          <div class="form-row-split">
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="Name" required placeholder="Your name">
+            </div>
+            <div class="form-row">
+              <label for="party">Party Size</label>
+              <select id="party" name="Party Size">
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7+ (call ahead)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row-split">
+            <div class="form-row">
+              <label for="date">Date</label>
+              <input type="date" id="date" name="Date" required>
+            </div>
+            <div class="form-row">
+              <label for="time">Time</label>
+              <input type="time" id="time" name="Time" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="Email" required placeholder="you@example.com">
+          </div>
+          <div class="form-row">
+            <label for="notes">Notes</label>
+            <textarea id="notes" name="Notes" rows="3" placeholder="Allergies, special occasions, seating preferences..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%; text-align:center; border:none; cursor:pointer;">Request Table</button>
+          <p class="form-note" id="formNote">This is a concept project. Reservations aren't actually sent anywhere.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-text">Ember Room</span>
+        <p>A modern wood-fired kitchen. Seasonal menu, one seating a night, no rush.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Explore</h3>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Reservations</a>
+      </div>
+      <div class="footer-col">
+        <h3>Visit</h3>
+        <p>Sample address: 210 Kiln Street</p>
+        <p>Tue-Sat, 5pm-11pm</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; Ember Room, a concept project by Webcraft Studio.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var navToggle = document.getElementById('navToggle');
+  var nav = document.getElementById('nav');
+  if (navToggle && nav) {
+    navToggle.addEventListener('click', function () {
+      var isOpen = nav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () { nav.classList.remove('open'); navToggle.setAttribute('aria-expanded', 'false'); });
+    });
+  }
+
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revealEls = document.querySelectorAll('.reveal');
+  if (prefersReducedMotion) {
+    revealEls.forEach(function (el) { el.classList.add('in-view'); });
+  } else {
+    var groups = new Map();
+    revealEls.forEach(function (el) {
+      var parent = el.parentElement;
+      var index = parent ? (groups.get(parent) || 0) : 0;
+      if (parent) groups.set(parent, index + 1);
+      el.style.setProperty('--reveal-delay', Math.min(index * 70, 350) + 'ms');
+    });
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('in-view'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(function (el) { observer.observe(el); });
+  }
+
+  var resForm = document.getElementById('resForm');
+  var formNote = document.getElementById('formNote');
+  if (resForm && formNote) {
+    resForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      formNote.textContent = "This is a concept project, so there's no real kitchen behind this button, but that's exactly how it would work.";
+      formNote.style.color = 'var(--accent)';
+    });
+  }
+</script>
+</body>
+</html>

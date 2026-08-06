@@ -521,7 +521,7 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 700; line-height: 1.2; 
   max-width: 720px;
   margin-left: auto; margin-right: auto;
 }
-.process-note h4 { font-size: 0.95rem; margin-bottom: 8px; }
+.process-note h3, .process-note h4 { font-size: 0.95rem; margin-bottom: 8px; }
 .process-note p { color: var(--muted); font-size: 0.92rem; }
 .process-note a { color: var(--accent-dark); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
 .process-note a:hover { color: var(--accent); }
