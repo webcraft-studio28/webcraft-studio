@@ -22,16 +22,25 @@
   <div class="container header-inner">
     <a href="#" class="logo">
       <span class="logo-mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-2-2-5-5.5-5-10a5 5 0 0 1 5-5c1 0 1.8.4 2 1 .2-.6 1-1 2-1a5 5 0 0 1 5 5c0 4.5-3 8-5 10-.3-1.5-.8-3-2-3s-1.7 1.5-2 3Z"/></svg>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-2-2-5-5.5-5-10a5 5 0 0 1 5-5c1 0 1.8.4 2 1 .2-.6 1-1 2-1a5 5 0 0 1 5 5c0 4.5-3 8-5 10-.3-1.5-.8-3-2-3s-1.7 1.5-2 3Z"/></svg>
       </span>
       Willow Dental
     </a>
-    <nav class="nav">
-      <a href="#services">Services</a>
-      <a href="#why">Why Willow</a>
-      <a href="#book">Book</a>
+    <nav class="nav" id="nav">
+      <a href="#why" class="tab-link">Why Willow</a>
+      <a href="#services" class="tab-link">Services</a>
+      <a href="#book" class="tab-link">Book</a>
     </nav>
-    <a href="#book" class="btn btn-outline">Book Now</a>
+    <div class="header-actions">
+      <span class="header-rating" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21l1.6-7L2 9.2l7.1-.6Z"/></svg>
+        4.9 · 210+ reviews
+      </span>
+      <a href="#book" class="btn btn-outline btn-sm">Book Now</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -39,27 +48,32 @@
 
   <section class="hero">
     <div class="hero-decor" aria-hidden="true"></div>
-    <div class="container hero-inner">
-      <div>
-        <p class="eyebrow">Modern Family &amp; Cosmetic Dentistry</p>
-        <h1>Dental care that actually feels <em>calm</em>.</h1>
-        <p class="hero-sub">
-          Gentle, modern dentistry for the whole family, without the sterile
-          waiting room or the guilt trip about flossing.
-        </p>
-        <div class="hero-cta">
-          <a href="#book" class="btn btn-primary">Book a Visit</a>
-          <a href="#services" class="btn btn-outline">See Services</a>
-        </div>
+    <div class="container hero-center">
+      <span class="hero-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-2-2-5-5.5-5-10a5 5 0 0 1 5-5c1 0 1.8.4 2 1 .2-.6 1-1 2-1a5 5 0 0 1 5 5c0 4.5-3 8-5 10-.3-1.5-.8-3-2-3s-1.7 1.5-2 3Z"/></svg>
+      </span>
+      <p class="eyebrow">Modern Family &amp; Cosmetic Dentistry</p>
+      <h1>Dental care that actually feels <em>calm</em>.</h1>
+      <p class="hero-sub">
+        Gentle, modern dentistry for the whole family, without the sterile
+        waiting room or the guilt trip about flossing.
+      </p>
+      <div class="hero-cta">
+        <a href="#book" class="btn btn-primary">Book a Visit</a>
+        <a href="#services" class="btn btn-outline">See Services</a>
       </div>
-      <div class="smile-art" aria-hidden="true">
-        <div class="smile-ring"></div>
-        <div class="smile-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-2-2-5-5.5-5-10a5 5 0 0 1 5-5c1 0 1.8.4 2 1 .2-.6 1-1 2-1a5 5 0 0 1 5 5c0 4.5-3 8-5 10-.3-1.5-.8-3-2-3s-1.7 1.5-2 3Z"/></svg>
+      <div class="trust-row">
+        <div class="trust-item">
+          <strong>4.9 ★★★★★</strong>
+          <span>210+ reviews</span>
         </div>
-        <div class="rating-badge">
-          <strong>4.9</strong>
-          <span>★★★★★ 210+ reviews</span>
+        <div class="trust-item">
+          <strong>Most PPO plans</strong>
+          <span>Insurance accepted</span>
+        </div>
+        <div class="trust-item">
+          <strong>Same-day</strong>
+          <span>Emergency appointments</span>
         </div>
       </div>
     </div>
@@ -67,38 +81,54 @@
 
   <section class="section" id="why">
     <div class="container">
-      <div class="section-head">
+      <div class="section-head section-head-left">
         <p class="section-tag">Why Willow</p>
         <h2 class="section-title">Dentistry, without the dread</h2>
       </div>
-      <div class="why-grid">
-        <div class="why-card reveal">
-          <div class="icon-circle" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a9 9 0 0 0-9 9c0 3.5 2 5.5 3 7l1-2c.5 1 1.5 2 2 3l1.5-2.5c.5 1 1.5 2 1.5 2l1.5-3c1 1 2 2.5 2 2.5s3-3 3-7a9 9 0 0 0-9-9Z"/></svg>
+      <div class="zigzag">
+        <div class="zigzag-row reveal">
+          <div class="zigzag-visual">
+            <div class="icon-circle-lg" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a9 9 0 0 0-9 9c0 3.5 2 5.5 3 7l1-2c.5 1 1.5 2 2 3l1.5-2.5c.5 1 1.5 2 1.5 2l1.5-3c1 1 2 2.5 2 2.5s3-3 3-7a9 9 0 0 0-9-9Z"/></svg>
+            </div>
           </div>
-          <h3>Gentle by design</h3>
-          <p>Sedation options and a genuinely calm space, not just a poster in the hallway that says "relax."</p>
+          <div class="zigzag-text">
+            <h3>Gentle by design</h3>
+            <p>Sedation options and a genuinely calm space, not just a poster in the hallway that says "relax."</p>
+          </div>
         </div>
-        <div class="why-card reveal">
-          <div class="icon-circle" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        <div class="zigzag-row reveal reverse">
+          <div class="zigzag-visual">
+            <div class="icon-circle-lg icon-coral" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
           </div>
-          <h3>Modern technology</h3>
-          <p>Digital X-rays and same-day crowns mean fewer visits and less time in the chair.</p>
+          <div class="zigzag-text">
+            <h3>Modern technology</h3>
+            <p>Digital X-rays and same-day crowns mean fewer visits and less time in the chair.</p>
+          </div>
         </div>
-        <div class="why-card reveal">
-          <div class="icon-circle" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+        <div class="zigzag-row reveal">
+          <div class="zigzag-visual">
+            <div class="icon-circle-lg" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+            </div>
           </div>
-          <h3>Transparent pricing</h3>
-          <p>Costs explained before any work starts, in writing, so there's no surprise on the bill.</p>
+          <div class="zigzag-text">
+            <h3>Transparent pricing</h3>
+            <p>Costs explained before any work starts, in writing, so there's no surprise on the bill.</p>
+          </div>
         </div>
-        <div class="why-card reveal">
-          <div class="icon-circle" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg>
+        <div class="zigzag-row reveal reverse">
+          <div class="zigzag-visual">
+            <div class="icon-circle-lg icon-coral" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg>
+            </div>
           </div>
-          <h3>Flexible scheduling</h3>
-          <p>Early, late, and Saturday appointments for people who can't just leave work.</p>
+          <div class="zigzag-text">
+            <h3>Flexible scheduling</h3>
+            <p>Early, late, and Saturday appointments for people who can't just leave work.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -106,41 +136,49 @@
 
   <section class="section section-alt" id="services">
     <div class="container">
-      <div class="section-head">
+      <div class="section-head section-head-left">
         <p class="section-tag">Services</p>
         <h2 class="section-title">What we treat</h2>
       </div>
-      <div class="menu-grid">
-        <div class="menu-card reveal">
+      <div class="price-list">
+        <div class="price-row reveal">
           <div class="icon-circle" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-2-2-5-5.5-5-10a5 5 0 0 1 5-5c1 0 1.8.4 2 1 .2-.6 1-1 2-1a5 5 0 0 1 5 5c0 4.5-3 8-5 10-.3-1.5-.8-3-2-3s-1.7 1.5-2 3Z"/></svg>
           </div>
-          <h3>General Checkup</h3>
-          <p>Cleaning, exam, and digital X-rays.</p>
+          <div class="price-row-text">
+            <h3>General Checkup</h3>
+            <p>Cleaning, exam, and digital X-rays.</p>
+          </div>
           <p class="price">From $89</p>
         </div>
-        <div class="menu-card reveal">
+        <div class="price-row reveal">
           <div class="icon-circle" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
           </div>
-          <h3>Cosmetic Whitening</h3>
-          <p>In-office whitening, done in about an hour.</p>
+          <div class="price-row-text">
+            <h3>Cosmetic Whitening</h3>
+            <p>In-office whitening, done in about an hour.</p>
+          </div>
           <p class="price">From $220</p>
         </div>
-        <div class="menu-card reveal">
+        <div class="price-row reveal">
           <div class="icon-circle" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
           </div>
-          <h3>Emergency Care</h3>
-          <p>Same-day appointments for real dental pain.</p>
+          <div class="price-row-text">
+            <h3>Emergency Care</h3>
+            <p>Same-day appointments for real dental pain.</p>
+          </div>
           <p class="price">From $150</p>
         </div>
-        <div class="menu-card reveal">
+        <div class="price-row reveal">
           <div class="icon-circle" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8c3-2 15-2 18 0"/><path d="M3 12c3-2 15-2 18 0"/><path d="M3 16c3-2 15-2 18 0"/></svg>
           </div>
-          <h3>Invisalign</h3>
-          <p>Straighter teeth, without the metal.</p>
+          <div class="price-row-text">
+            <h3>Invisalign</h3>
+            <p>Straighter teeth, without the metal.</p>
+          </div>
           <p class="price">From $3,200</p>
         </div>
       </div>
@@ -150,6 +188,7 @@
   <section class="visit" id="book">
     <div class="container">
       <div class="visit-grid">
+        <div class="map-block" aria-hidden="true">Map placeholder</div>
         <div>
           <h2>Ready when you are</h2>
           <div class="visit-detail">
@@ -172,7 +211,6 @@
           </div>
           <a href="#" class="btn btn-primary" style="margin-top:8px;">Request an Appointment</a>
         </div>
-        <div class="map-block" aria-hidden="true">Map placeholder</div>
       </div>
     </div>
   </section>
@@ -183,16 +221,16 @@
         <p class="section-tag">Design Notes</p>
         <h2 class="section-title">Why this concept looks the way it does</h2>
       </div>
-      <div class="notes-grid">
-        <div class="reveal">
+      <div class="notes-list">
+        <div class="note-row reveal">
           <h3>The problem</h3>
           <p>Most local dental sites are either a generic template from practice-management software, or intimidating close-up stock photos of dental tools. Neither builds trust with someone who's already anxious about the visit.</p>
         </div>
-        <div class="reveal">
+        <div class="note-row reveal">
           <h3>The approach</h3>
-          <p>A calm, soft-toned single page that leads with reassurance and transparent pricing before asking for anything, with a custom illustrated smile motif in place of clinical stock photography.</p>
+          <p>A calm, soft-toned page with its own layout, not a reskinned template: a slim tab-style header with reviews built in, a single-column centered hero, and an alternating zigzag story instead of a card grid, each reason to choose Willow given its own full-width moment rather than competing for space in a box.</p>
         </div>
-        <div class="reveal">
+        <div class="note-row reveal">
           <h3>The result</h3>
           <p>A page that feels closer to a boutique wellness brand than a dental office, while still surfacing exactly what a new patient needs: services, pricing, hours, and a way to book.</p>
         </div>
@@ -209,6 +247,18 @@
 </footer>
 
 <script>
+  var navToggle = document.getElementById('navToggle');
+  var nav = document.getElementById('nav');
+  if (navToggle && nav) {
+    navToggle.addEventListener('click', function () {
+      var isOpen = nav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () { nav.classList.remove('open'); navToggle.setAttribute('aria-expanded', 'false'); });
+    });
+  }
+
   var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var revealEls = document.querySelectorAll('.reveal');
   if (prefersReducedMotion) {

@@ -25,34 +25,31 @@
       </span>
       Pulse
     </a>
-    <nav class="nav">
-      <a href="#features">Features</a>
-      <a href="#stats">Results</a>
-    </nav>
-    <a href="#download" class="btn btn-primary">Get Pulse</a>
+    <a href="#download" class="btn btn-primary btn-sm">Get Pulse</a>
   </div>
 </header>
 
+<nav class="snap-dots" aria-label="Section navigation">
+  <a href="#home" class="dot active" aria-label="Home"></a>
+  <a href="#features" class="dot" aria-label="Why Pulse"></a>
+  <a href="#stats" class="dot" aria-label="Numbers"></a>
+  <a href="#download" class="dot" aria-label="Download"></a>
+</nav>
+
 <main>
 
-  <section class="hero">
-    <div class="container hero-inner">
-      <div>
-        <span class="eyebrow">Now on iOS &amp; Android</span>
-        <h1>Train smarter with <span>real-time</span> feedback.</h1>
-        <p class="hero-sub">
-          Pulse tracks heart rate, effort, and recovery in the background, then
-          tells you, in plain language, whether to push harder or back off.
-        </p>
-        <div class="hero-cta">
-          <a href="#download" class="btn btn-primary">Get Pulse Free</a>
-          <a href="#features" class="btn btn-outline">See How It Works</a>
-        </div>
-        <div class="hero-stats">
-          <div><strong>4.8</strong><span>Average rating</span></div>
-          <div><strong>50K+</strong><span>Downloads</span></div>
-          <div><strong>30+</strong><span>Countries</span></div>
-        </div>
+<div class="snap-container" id="snapContainer">
+  <section class="hero snap-section" id="home">
+    <div class="container hero-stack">
+      <span class="eyebrow">Now on iOS &amp; Android</span>
+      <h1>Train smarter with <span>real-time</span> feedback.</h1>
+      <p class="hero-sub">
+        Pulse tracks heart rate, effort, and recovery in the background, then
+        tells you, in plain language, whether to push harder or back off.
+      </p>
+      <div class="hero-cta">
+        <a href="#download" class="btn btn-primary">Get Pulse Free</a>
+        <a href="#features" class="btn btn-outline">See How It Works</a>
       </div>
 
       <div class="phone" aria-hidden="true">
@@ -73,43 +70,55 @@
           </div>
         </div>
       </div>
+
+      <div class="hero-stats">
+        <div><strong>4.8</strong><span>Average rating</span></div>
+        <div><strong>50K+</strong><span>Downloads</span></div>
+        <div><strong>30+</strong><span>Countries</span></div>
+      </div>
     </div>
   </section>
 
-  <section class="section section-alt" id="features">
+  <section class="section section-alt snap-section" id="features">
     <div class="container">
-      <div class="section-head">
+      <div class="section-head section-head-left">
         <p class="section-tag">Why Pulse</p>
         <h2 class="section-title">Everything your watch tracks, finally explained</h2>
         <p class="section-sub">Most fitness apps give you numbers. Pulse tells you what to actually do with them.</p>
       </div>
-      <div class="features-grid">
-        <div class="feature-card">
+      <div class="features-list">
+        <div class="feature-row">
           <div class="icon-circle" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
           </div>
-          <h3>Live Heart Rate</h3>
-          <p>Second-by-second tracking synced from your watch or chest strap.</p>
+          <div>
+            <h3>Live Heart Rate</h3>
+            <p>Second-by-second tracking synced from your watch or chest strap.</p>
+          </div>
         </div>
-        <div class="feature-card">
+        <div class="feature-row">
           <div class="icon-circle" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg>
           </div>
-          <h3>Recovery Score</h3>
-          <p>A daily 0-100 score so you know when to train hard and when to rest.</p>
+          <div>
+            <h3>Recovery Score</h3>
+            <p>A daily 0-100 score so you know when to train hard and when to rest.</p>
+          </div>
         </div>
-        <div class="feature-card">
+        <div class="feature-row">
           <div class="icon-circle" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
           </div>
-          <h3>Plain-Language Coaching</h3>
-          <p>No jargon, just "push today" or "take it easy," backed by your data.</p>
+          <div>
+            <h3>Plain-Language Coaching</h3>
+            <p>No jargon, just "push today" or "take it easy," backed by your data.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="stats">
+  <section class="section snap-section" id="stats">
     <div class="container">
       <div class="section-head">
         <p class="section-tag">In The Numbers</p>
@@ -124,7 +133,7 @@
     </div>
   </section>
 
-  <section class="cta" id="download">
+  <section class="cta snap-section" id="download">
     <div class="container">
       <h2>Try Pulse this week</h2>
       <p>Free to start, no credit card required. Available on iOS and Android.</p>
@@ -140,6 +149,7 @@
       </div>
     </div>
   </section>
+</div>
 
   <section class="section section-alt" id="notes">
     <div class="container">
@@ -148,17 +158,20 @@
         <h2 class="section-title">Why this concept looks the way it does</h2>
       </div>
       <div class="notes-grid">
-        <div>
+        <div class="note-card">
+          <span class="note-badge">01</span>
           <h3>The problem</h3>
           <p>Fitness apps compete in a saturated market where a landing page has to earn trust within seconds. Most fall back to stock photography and vague "get fit fast" claims that don't hold up with a data-driven audience.</p>
         </div>
-        <div>
+        <div class="note-card">
+          <span class="note-badge">02</span>
           <h3>The approach</h3>
-          <p>A dark, bold, conversion-focused design that leans into the data angle: a custom animated phone mockup showing live metrics instead of a generic screenshot, plain-language copy over jargon, and one uncluttered path toward a single call to action.</p>
+          <p>A minimal, sticky, nav-less header and a single-column stacked hero built around one dominant phone mockup, instead of the side-by-side text-and-visual split used elsewhere. Plain-language copy over jargon, one uncluttered path toward a single call to action.</p>
         </div>
-        <div>
+        <div class="note-card">
+          <span class="note-badge">03</span>
           <h3>The result</h3>
-          <p>A page structured around one goal (the download) with every section building toward that action, and a visual language distinct enough from Amber &amp; Oak's warm palette to show the same studio can execute two completely different registers.</p>
+          <p>A page structured around one goal (the download) with every section building toward that action, and a layout distinct enough from the studio's other work to show the same team can execute completely different registers.</p>
         </div>
       </div>
     </div>
@@ -172,5 +185,21 @@
   </div>
 </footer>
 
+<script>
+  var snapContainer = document.getElementById('snapContainer');
+  var dots = document.querySelectorAll('.snap-dots .dot');
+  if (snapContainer && dots.length) {
+    var sections = snapContainer.querySelectorAll('.snap-section');
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var index = Array.prototype.indexOf.call(sections, entry.target);
+          dots.forEach(function (dot, i) { dot.classList.toggle('active', i === index); });
+        }
+      });
+    }, { root: snapContainer, threshold: 0.6 });
+    sections.forEach(function (section) { observer.observe(section); });
+  }
+</script>
 </body>
 </html>

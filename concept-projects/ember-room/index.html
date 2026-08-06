@@ -18,26 +18,32 @@
   Concept project by Webcraft Studio: a fictional business built to demonstrate design range. <a href="../../portfolio.html">← Back to portfolio</a>
 </div>
 
-<header class="site-header">
-  <div class="container header-inner">
+<div class="app-shell">
+<aside class="site-sidebar">
+  <div class="sidebar-top">
     <a href="index.html" class="logo">
       <span class="logo-mark" aria-hidden="true">
         <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c1.5 3 4 5 4 9a4 4 0 0 1-8 0c0-1 .3-1.8.8-2.6.4.8 1.2 1.4 2 1.4a1.6 1.6 0 0 0 1.6-1.6c0-1-.7-1.6-.7-3C11.7 4.6 11 3.2 12 2Z"/></svg>
       </span>
       <span class="logo-text">Ember Room</span>
     </a>
-    <nav class="nav" id="nav">
-      <a href="index.html" class="active">Home</a>
-      <a href="menu.html">Menu</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Reservations</a>
-    </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
-</header>
+  <nav class="nav" id="nav">
+    <a href="index.html" class="active">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Reservations</a>
+  </nav>
+  <div class="sidebar-foot">
+    <p>Tue-Sat<br>5pm-11pm</p>
+    <a href="contact.html" class="btn btn-primary btn-sm">Reserve a Table</a>
+  </div>
+</aside>
 
+<div class="site-content">
 <main>
 
   <section class="hero">
@@ -225,6 +231,8 @@
     </div>
   </div>
 </footer>
+</div>
+</div>
 
 <script>
   var navToggle = document.getElementById('navToggle');
